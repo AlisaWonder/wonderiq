@@ -257,7 +257,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
       <div class="col"><span class="age" data-t="a3">16–18 лет</span><h3>A-Level / IB</h3><p data-t="c3p">A-Level Maths, Further Maths, Computer Science. IB Maths SL и HL.</p></div>
       <div class="col"><span class="age" data-t="a4">10–18 лет</span><h3 data-t="c4h">США</h3><p data-t="c4p">Математика с Grade 5 до поступления в университет.</p></div>
       <div class="col"><span class="age" data-t="a4">10–18 лет</span><h3 data-t="c5h">Испания</h3><p data-t="c5p">Matemáticas: Primaria, ESO, Bachillerato и подготовка к PAU.</p></div>
-      <div class="col"><span class="age" data-t="a6">от 10 лет</span><h3 data-t="c6h">Для детей</h3><p data-t="c6p">Компьютерная грамотность и первые шаги в программировании.</p></div>
+      <div class="col"><span class="age" data-t="a6">от 10 лет</span><h3 data-t="c6h">Для детей</h3><p data-t="c6p">Компьютерная грамотность, Scratch и первые шаги в программировании.</p></div>
     </div>
   </div>
 </section>
@@ -268,8 +268,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
     <div>
       <p class="kicker" data-t="nav2">О преподавателе</p>
       <h2 data-t="about_h">Алиса, основатель Wonderiq</h2>
-      <blockquote data-t="quote">Важно, чтобы ученик понял материал, почувствовал уверенность в своих силах и перестал бояться сложных задач.</blockquote>
+      <blockquote data-t="quote">Математика — это не просто формулы и вычисления. Это логика, структура, творчество и умение находить решения, не боясь ошибиться.</blockquote>
       <p data-t="ab1">Несколько лет назад я сама переехала в новую страну. Сейчас живу в Испании и хорошо понимаю, с чем сталкиваются семьи за границей: новая школа, новая система образования, новый язык.</p>
+      <p data-t="ab3">Я сама училась в международной школе по программе A-Level (Laude San Pedro International College): Mathematics — A*, Further Mathematics — A. Поэтому хорошо знаю требования экзаменов и что значит переходить из одной системы образования в другую.</p>
       <p data-t="ab2">По образованию я специалист в Computer Science (BSc), сейчас учусь по программе Master of Education. Wonderiq начинается с моих уроков, а цель — международная школа, которой доверяют семьи из разных стран.</p>
       <div class="facts">
         <div><b data-t="f1b">с 2018</b><span data-t="f1s">преподаю</span></div>
@@ -316,15 +317,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
   </div>
 </section>
 
-<!-- reviews: hidden until real reviews arrive -->
-<section class="sec reviews" id="reviews" hidden>
+<!-- reviews: real messages from students and parents (screenshots on Profi.ru); children's names removed -->
+<section class="sec reviews" id="reviews">
   <div class="wrap">
     <p class="kicker" data-t="rv_k">Отзывы</p>
     <h2 data-t="rv_h">Что говорят родители и ученики</h2>
     <div class="quotes">
-      <figure><blockquote><span class="ph" data-t="rv">Текст настоящего отзыва</span></blockquote><figcaption><span class="ph" data-t="rvc">Имя, мама ученика, город</span></figcaption></figure>
-      <figure><blockquote><span class="ph" data-t="rv">Текст настоящего отзыва</span></blockquote><figcaption><span class="ph" data-t="rvc">Имя, мама ученика, город</span></figcaption></figure>
-      <figure><blockquote><span class="ph" data-t="rv">Текст настоящего отзыва</span></blockquote><figcaption><span class="ph" data-t="rvc">Имя, мама ученика, город</span></figcaption></figure>
+      <figure><blockquote data-t="rv1">Получила три A и A* за EPQ. С нового учебного года иду в UCL! Спасибо вам ещё раз за всю вашу поддержку и помощь с математикой</blockquote><figcaption data-t="rv1c">Ученица, A-Level</figcaption></figure>
+      <figure><blockquote data-t="rv2">Вчера опубликовали результаты экзаменов: 8 по математике и 9 по computer science. Мы все очень рады. Хотела поблагодарить вас ещё раз за занятия и за внимательное отношение</blockquote><figcaption data-t="rv2c">Мама ученицы, GCSE</figcaption></figure>
+      <figure><blockquote data-t="rv3">Вы очень хорошо мне всё объяснили — то, что учитель не смог за год</blockquote><figcaption data-t="rv3c">Ученица</figcaption></figure>
     </div>
   </div>
 </section>
@@ -368,7 +369,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
 <footer>
   <div class="wrap">
     <span>© 2026 Wonderiq · International Education</span>
-    <span><a href="https://wa.me/34644586609">WhatsApp</a> · <a href="https://t.me/wonderiq_academy">Telegram</a></span>
+    <span><a href="https://wa.me/34644586609">WhatsApp</a> · <a href="https://t.me/wonderiq_academy">Telegram</a> · <a href="https://profi.ru/profile/KorenskayaAS/" data-t="profi">Профи.ру</a></span>
   </div>
 </footer>
 
@@ -415,10 +416,12 @@ const T={
   c3p:["A-Level Maths, Further Maths, Computer Science. IB Maths SL and HL.","A-Level Maths, Further Maths, Computer Science. IB Maths SL y HL."],
   c4h:["USA","EE. UU."],c4p:["Maths from Grade 5 through college admission.","Matemáticas desde Grade 5 hasta el acceso a la universidad."],
   c5h:["Spain","España"],c5p:["Matemáticas: Primaria, ESO, Bachillerato and PAU preparation.","Matemáticas: Primaria, ESO, Bachillerato y preparación para la PAU."],
-  c6h:["For children","Para niños"],c6p:["Computer literacy and first steps in programming.","Informática básica y primeros pasos en programación."],
+  c6h:["For children","Para niños"],c6p:["Computer literacy, Scratch and first steps in programming.","Informática básica, Scratch y primeros pasos en programación."],
   photo:["Alisa, Wonderiq tutor","Alisa, profesora de Wonderiq"],
   about_h:["Alisa, founder of Wonderiq","Alisa, fundadora de Wonderiq"],
-  quote:["What matters is that students understand the material, believe in themselves and stop being afraid of hard problems.","Lo importante es que el alumno entienda la materia, confíe en sí mismo y deje de tener miedo a los problemas difíciles."],
+  quote:["Mathematics is more than formulas and calculations. It is logic, structure, creativity and the ability to find solutions without being afraid of mistakes.","Las matemáticas no son solo fórmulas y cálculos. Son lógica, estructura, creatividad y la capacidad de encontrar soluciones sin miedo a equivocarse."],
+  ab3:["I studied A-Levels at an international school myself (Laude San Pedro International College): Mathematics — A*, Further Mathematics — A. So I know what the exams require and what it means to move from one education system to another.","Yo misma estudié A-Level en un colegio internacional (Laude San Pedro International College): Mathematics — A*, Further Mathematics — A. Por eso conozco bien lo que piden los exámenes y lo que supone cambiar de sistema educativo."],
+  profi:["Profi.ru","Profi.ru"],
   ab1:["A few years ago I moved to a new country myself. I now live in Spain, and I know first-hand what families abroad face: a new school, a new education system, a new language.","Hace unos años yo misma me mudé a otro país. Ahora vivo en España y sé bien a qué se enfrentan las familias en el extranjero: un colegio nuevo, un sistema educativo nuevo, un idioma nuevo."],
   ab2:["I hold a BSc in Computer Science and am now studying for a Master of Education. Wonderiq starts with my lessons; the goal is an international school trusted by families in many countries.","Soy graduada en Computer Science (BSc) y ahora curso un Master of Education. Wonderiq empieza con mis clases; el objetivo es una escuela internacional en la que confíen familias de muchos países."],
   f1b:["since 2018","desde 2018"],f1s:["teaching","enseñando"],f3b:["3 languages","3 idiomas"],f3s:["Russian, English, Spanish","ruso, inglés, español"],
@@ -434,7 +437,9 @@ const T={
   d5t:["Exams","Exámenes"],d5d:["We work through past papers and mark schemes.","Trabajamos con exámenes de años anteriores y criterios de corrección."],
   d6t:["Long-term","A largo plazo"],d6d:["Exam preparation and support throughout school.","Preparación de exámenes y apoyo durante todos los estudios."],
   rv_k:["Reviews","Opiniones"],rv_h:["What parents and students say","Qué dicen padres y alumnos"],
-  rv:["Text of a real review","Texto de una opinión real"],rvc:["Name, parent, city","Nombre, madre o padre, ciudad"],
+  rv1:["I got three As and an A* for my EPQ. I'm going to UCL this academic year! Thank you again for all your support and help with maths","He sacado tres A y una A* en el EPQ. ¡Este curso empiezo en UCL! Gracias otra vez por todo tu apoyo y tu ayuda con las matemáticas"],rv1c:["Student, A-Level","Alumna, A-Level"],
+  rv2:["The exam results came out yesterday: 8 in maths and 9 in computer science. We are all very happy. I wanted to thank you once again for the lessons and for your attentive approach","Ayer publicaron los resultados: un 8 en matemáticas y un 9 en computer science. Estamos todos muy contentos. Quería darte las gracias otra vez por las clases y por tu atención"],rv2c:["Parent, GCSE","Madre de alumna, GCSE"],
+  rv3:["You explained everything to me really well — what my teacher couldn't manage in a whole year","Me lo explicaste todo muy bien, lo que mi profesor no consiguió en todo un año"],rv3c:["Student","Alumna"],
   pr_h:["Lesson prices","Precios de las clases"],p30:["/ 30 minutes","/ 30 minutos"],p60:["/ 60 minutes","/ 60 minutos"],
   p1p:["Level check and a study plan.","Prueba de nivel y plan de estudio."],p2h:["Lesson","Clase"],p2p:["One-to-one lesson. The price depends on the programme.","Clase individual. El precio depende del programa."],
   fq_h:["Frequently asked questions","Preguntas frecuentes"],
