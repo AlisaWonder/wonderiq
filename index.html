@@ -166,7 +166,7 @@ h1 em{color:var(--brass);font-weight:500;background:linear-gradient(var(--brass)
 
 /* reviews */
 .reviews .wrap{border-top:1px solid var(--rule)}
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 64px;max-width:1000px}
 .quotes figure{margin:0;min-width:0}
 .quotes blockquote{margin:0 0 16px;font-family:var(--serif);font-size:21px;line-height:1.4}
 .quotes blockquote::before{content:"«";color:var(--brass)}
@@ -362,6 +362,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
     <h2 data-t="rv_h">Что говорят родители и ученики</h2>
     <div class="quotes">
       <figure><blockquote data-t="rv1">Получила три A и A* за EPQ. С нового учебного года иду в UCL! Спасибо вам ещё раз за всю вашу поддержку и помощь с математикой</blockquote><figcaption data-t="rv1c">Ученица, A-Level</figcaption></figure>
+      <figure><blockquote data-t="rv4">Сегодня пришли результаты: у меня 95 за S3! А по механике 1 пришли результаты: 76%, на 30% больше, чем было</blockquote><figcaption data-t="rv4c">Ученица, A-Level Maths</figcaption></figure>
       <figure><blockquote data-t="rv2">Вчера опубликовали результаты экзаменов: 8 по математике и 9 по computer science. Мы все очень рады. Хотела поблагодарить вас ещё раз за занятия и за внимательное отношение</blockquote><figcaption data-t="rv2c">Мама ученицы, GCSE</figcaption></figure>
       <figure><blockquote data-t="rv3">Вы очень хорошо мне всё объяснили: то, что учитель не смог за год</blockquote><figcaption data-t="rv3c">Ученица</figcaption></figure>
     </div>
@@ -477,6 +478,7 @@ const T={
   rv_k:["Reviews","Opiniones"],rv_h:["What parents and students say","Qué dicen padres y alumnos"],
   rv1:["I got three As and an A* for my EPQ. I'm going to UCL this academic year! Thank you again for all your support and help with maths","He sacado tres A y una A* en el EPQ. ¡Este curso empiezo en UCL! Gracias otra vez por todo tu apoyo y tu ayuda con las matemáticas"],rv1c:["Student, A-Level","Alumna, A-Level"],
   rv2:["The exam results came out yesterday: 8 in maths and 9 in computer science. We are all very happy. I wanted to thank you once again for the lessons and for your attentive approach","Ayer publicaron los resultados: un 8 en matemáticas y un 9 en computer science. Estamos todos muy contentos. Quería darte las gracias otra vez por las clases y por tu atención"],rv2c:["Parent, GCSE","Madre de alumna, GCSE"],
+  rv4:["My results came today: 95 in S3! And my Mechanics 1 result is in: 76%, 30% higher than before","Hoy han llegado los resultados: ¡95 en S3! Y en Mecánica 1: 76%, un 30% más que antes"],rv4c:["Student, A-Level Maths","Alumna, A-Level Maths"],
   rv3:["You explained everything to me really well: what my teacher couldn't manage in a whole year","Me lo explicaste todo muy bien, lo que mi profesor no consiguió en todo un año"],rv3c:["Student","Alumna"],
   pr_h:["Lesson prices","Precios de las clases"],p30:["/ 30 minutes","/ 30 minutos"],p60:["/ 60 minutes","/ 60 minutos"],
   p1p:["Level check and a study plan.","Prueba de nivel y plan de estudio."],p2h:["Lesson","Clase"],p2p:["One-to-one lesson. The price depends on the programme.","Clase individual. El precio depende del programa."],
