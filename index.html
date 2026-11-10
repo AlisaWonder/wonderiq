@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wonderiq · International Education</title>
+<meta name="description" content="Математика и информатика для учеников международных школ: MYP, GCSE / IGCSE, A-Level, IB. Индивидуальные онлайн-уроки на русском, английском и испанском.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: textbook plate. Serif headline left, "Fig. 1" figure right; catalogue of stages in hairline columns */
+:root{
+  --paper:#fbfbf9;
+  --rule:#d9dce3;
+  --ink:#131b33;
+  --navy:#16244a;
+  --muted:#5f667c;
+  --brass:#a8834a;
+  --on-navy:#f4f2ec;
+  --serif:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --sans:"Golos Text","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0e1528;--rule:#27304a;--ink:#ecebe5;--navy:#c9d2ee;--muted:#9aa1b6;--brass:#c9a36a;--on-navy:#0e1528;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0e1528;--rule:#27304a;--ink:#ecebe5;--navy:#c9d2ee;--muted:#9aa1b6;--brass:#c9a36a;--on-navy:#0e1528;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+section{scroll-margin-top:24px}
+
+/* things Alisa still has to fill in */
+.ph{background:color-mix(in srgb,var(--brass) 16%,transparent);border-bottom:1px dashed var(--brass);padding:0 .2em}
+
+/* header */
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:26px;border-bottom:1px solid var(--rule)}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo i{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-family:var(--serif);font-style:normal;font-weight:600;font-size:24px;line-height:1;flex:none}
+.logo b{display:block;font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.22em;line-height:1}
+.logo small{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.lang{display:flex;gap:2px;font-size:13px;letter-spacing:.08em}
+.lang button{font:inherit;letter-spacing:inherit;background:none;border:0;padding:6px 7px;color:var(--muted);cursor:pointer}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--brass)}
+
+/* shared section type */
+.sec .wrap{padding-block:88px}
+.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin:0 0 14px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1.08;margin:0 0 40px;letter-spacing:-.01em;text-wrap:balance}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center;padding-block:72px 88px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin:0 0 28px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--brass)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6.2vw,84px);line-height:1.02;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h1 em{color:var(--brass);font-weight:500;background:linear-gradient(var(--brass),var(--brass)) no-repeat 0 92%/0% 1.5px;animation:line 1s 2.6s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes line{to{background-size:100% 1.5px}}
+.lead{font-size:clamp(17px,1.5vw,19px);max-width:40ch;margin:32px 0 40px;color:var(--muted)}
+.lead strong{color:var(--ink);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--navy);color:var(--on-navy);text-decoration:none;font:500 16px/1.2 var(--sans);letter-spacing:.02em;padding:17px 28px;border:0;border-radius:999px;cursor:pointer;transition:gap .3s}
+.btn:hover{gap:22px}
+.btn svg{width:16px;height:16px}
+.note{font-size:14px;color:var(--muted)}
+
+/* figure */
+.fig{margin:0;max-width:100%}
+.fig svg{display:block;width:100%;height:auto}
+.fig figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:12px;margin-top:6px;font-size:14px;color:var(--muted)}
+.fig figcaption em{font-family:var(--serif);font-size:18px;color:var(--ink)}
+.fig figcaption code{font-family:var(--mono);font-size:12.5px}
+.gl{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 4}
+.ax{stroke:var(--ink);stroke-width:1}
+.axl{font-family:var(--serif);font-style:italic;font-size:17px;fill:var(--muted)}
+.curve{fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linejoin:miter;stroke-linecap:square}
+.pt{fill:var(--paper);stroke:var(--brass);stroke-width:1.5;opacity:0;transition:opacity .5s}
+.pt.on{opacity:1;fill:var(--brass)}
+.dot{fill:var(--navy)}
+
+/* stages */
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+
+/* universities */
+.unis .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 28px;padding-block:28px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.unis span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.unis ul{display:flex;flex-wrap:wrap;gap:6px 28px;list-style:none;margin:0;padding:0;font-family:var(--serif);font-size:21px;font-weight:600}
+.col{padding:26px 28px 26px 0;min-width:0;border-bottom:1px solid var(--rule)}
+.col:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--rule)}
+.col .age{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.col h3{font-family:var(--serif);font-weight:600;font-size:30px;margin:8px 0 8px;line-height:1.1}
+.col p{margin:0;color:var(--muted);font-size:15.5px;max-width:32ch}
+.stages .wrap{padding-top:8px}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:64px;align-items:start;border-top:1px solid var(--rule)}
+.portrait{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.about blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.3;margin:0 0 32px;max-width:28ch}
+.about p{margin:0 0 16px;max-width:60ch;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px;gap:24px;margin-top:40px;padding-top:24px;border-top:1px solid var(--rule)}
+.facts b{display:block;font-family:var(--serif);font-weight:600;font-size:36px;line-height:1;color:var(--ink)}
+.facts span{font-size:14px;color:var(--muted)}
+
+/* steps */
+.steps{background:var(--navy);color:var(--on-navy)}
+.steps .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px}
+.steps h2{margin:0}
+.steps .kicker{color:var(--brass)}
+.steps ol{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:22px 0;border-top:1px solid color-mix(in srgb,var(--on-navy) 25%,transparent)}
+.steps li>span{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--brass);line-height:1}
+.steps li b{display:block;font-weight:500;margin-bottom:4px}
+.steps li p{margin:0;opacity:.75;max-width:48ch}
+
+/* format */
+.format dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px;margin:0;border-top:1px solid var(--ink)}
+.format dl div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--rule)}
+.format dt{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.3}
+.format dd{margin:0;color:var(--muted);font-size:15.5px}
+
+/* reviews */
+.reviews .wrap{border-top:1px solid var(--rule)}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.quotes figure{margin:0;min-width:0}
+.quotes blockquote{margin:0 0 16px;font-family:var(--serif);font-size:21px;line-height:1.4}
+.quotes blockquote::before{content:"«";color:var(--brass)}
+.quotes blockquote::after{content:"»";color:var(--brass)}
+.quotes figcaption{font-size:14px;color:var(--muted)}
+
+/* prices */
+.prices .wrap{border-top:1px solid var(--rule)}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;border-top:1px solid var(--ink)}
+.plan{padding:28px 28px 28px 0;min-width:0;display:flex;flex-direction:column;gap:10px}
+.plan+.plan{padding-left:28px;border-left:1px solid var(--rule)}
+.plan h3{font-family:var(--serif);font-weight:600;font-size:26px;margin:0}
+.plan .price{font-family:var(--serif);font-size:40px;line-height:1;color:var(--ink)}
+.plan .price small{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.plan p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* games */
+.games .wrap{border-top:1px solid var(--rule)}
+.game{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 40px;align-items:center;max-width:820px;padding:28px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.game h3{font-family:var(--serif);font-weight:600;font-size:30px;margin:0 0 6px;line-height:1.1}
+.game p{margin:0;color:var(--muted);font-size:15.5px}
+.game a{font-size:16px;text-underline-offset:5px;text-decoration-thickness:1px;text-decoration-color:var(--brass);white-space:nowrap}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px;border-top:1px solid var(--rule)}
+.faq h2{margin:0}
+details{border-top:1px solid var(--rule)}
+details:last-child{border-bottom:1px solid var(--rule)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:20px 0;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--serif);font-size:26px;line-height:.8;color:var(--brass);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 22px;color:var(--muted);max-width:60ch}
+
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px}
+.contact h2{margin:0 0 20px}
+.contact .intro p{opacity:.75;max-width:40ch;margin:0}
+.contact .go{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:14px}
+.contact .btn{background:var(--brass);color:#131b33}
+.contact .go small{font-size:14px;opacity:.75}
+
+/* footer */
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:32px;font-size:14px;color:var(--muted)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .sec .wrap{padding-block:64px}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:48px;padding-block:44px 64px}
+  .plans,.quotes,.game{grid-template-columns:minmax(0,1fr)}
+  .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+  .cols>.col,.plan,.plan+.plan{padding:22px 0;border-left:0;border-bottom:1px solid var(--rule)}
+  .unis ul{font-size:18px}
+  .about .wrap,.steps .wrap,.faq .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr);gap:32px}
+  .portrait{max-width:320px}
+  .format dl{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .format dl div{grid-template-columns:minmax(0,1fr);gap:4px}
+  .logo small{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.pt,summary::after{transition:none}
+  h1 em{animation:none;background-size:100% 1.5px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" id="top"><i>W</i><span><b>WONDERIQ</b><small>International Education</small></span></a>
+    <nav aria-label="Разделы">
+      <a href="#programs" data-t="nav1">Программы</a>
+      <a href="#about" data-t="nav2">О преподавателе</a>
+      <a href="#format" data-t="nav3">Как проходят уроки</a>
+      <a href="#games" data-t="nav6">Игры</a>
+      <a href="#prices" data-t="nav4">Цены</a>
+      <a href="#faq" data-t="nav5">Вопросы</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Язык / Language / Idioma">
+      <button type="button" data-l="ru" aria-pressed="true">RU</button>
+      <button type="button" data-l="en" aria-pressed="false">EN</button>
+      <button type="button" data-l="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Mathematics · Computer Science</p>
+      <h1 data-t="h1">Математика и&nbsp;информатика для учеников <em>международных школ</em></h1>
+      <p class="lead" data-t="lead"><strong>Помогаем русскоязычным ученикам уверенно учиться по британской, IB, американской и испанской программам.</strong> Уроки на русском, английском или испанском.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contact"><span data-t="cta">Записаться на знакомство</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <span class="note" data-t="note">30 минут, бесплатно</span>
+      </div>
+    </div>
+
+    <figure class="fig" aria-label="y = ||x| − 1| → W">
+      <svg id="g" viewBox="0 0 480 380" role="img"></svg>
+      <figcaption><em><span data-t="fig">Рис. 1.</span> y = ||x| − 1|, x ∈ [−2; 2]</em><code>abs(abs(x) - 1)</code></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="unis">
+  <div class="wrap">
+    <span data-t="unis">Ученики поступили в</span>
+    <ul><li>UCL</li><li>University of Birmingham</li><li>University of Amsterdam</li><li>Maastricht University</li><li>City St George’s, University of London</li></ul>
+  </div>
+</section>
+
+<section class="sec stages" id="programs">
+  <div class="wrap">
+    <p class="kicker" data-t="nav1">Программы</p>
+    <h2 data-t="prog_h">С 5 класса до поступления в университет</h2>
+    <div class="cols">
+      <div class="col"><span class="age" data-t="a1">10–14 лет</span><h3>MYP / pre-IGCSE</h3><p data-t="c1p">Математика с 5 класса в любой системе. MYP, Key Stage 3, подготовка к IGCSE.</p></div>
+      <div class="col"><span class="age" data-t="a2">14–16 лет</span><h3>GCSE / IGCSE</h3><p>Maths, Additional Maths, Computer Science.</p></div>
+      <div class="col"><span class="age" data-t="a3">16–18 лет</span><h3>A-Level / IB</h3><p data-t="c3p">A-Level Maths, Further Maths, Computer Science. IB Maths SL и HL.</p></div>
+      <div class="col"><span class="age" data-t="a4">10–18 лет</span><h3 data-t="c4h">США</h3><p data-t="c4p">Математика с Grade 5 до поступления в университет.</p></div>
+      <div class="col"><span class="age" data-t="a4">10–18 лет</span><h3 data-t="c5h">Испания</h3><p data-t="c5p">Matemáticas: Primaria, ESO, Bachillerato и подготовка к PAU.</p></div>
+      <div class="col"><span class="age" data-t="a6">от 10 лет</span><h3 data-t="c6h">Для детей</h3><p data-t="c6p">Компьютерная грамотность и первые шаги в программировании.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap">
+    <img class="portrait" src="alisa.jpg" alt="Алиса, преподаватель Wonderiq" data-ta="photo" width="720" height="900">
+    <div>
+      <p class="kicker" data-t="nav2">О преподавателе</p>
+      <h2 data-t="about_h">Алиса, основатель Wonderiq</h2>
+      <blockquote data-t="quote">Важно, чтобы ученик понял материал, почувствовал уверенность в своих силах и перестал бояться сложных задач.</blockquote>
+      <p data-t="ab1">Несколько лет назад я сама переехала в новую страну. Сейчас живу в Испании и хорошо понимаю, с чем сталкиваются семьи за границей: новая школа, новая система образования, новый язык.</p>
+      <p data-t="ab2">По образованию я специалист в Computer Science (BSc), сейчас учусь по программе Master of Education. Wonderiq начинается с моих уроков, а цель — международная школа, которой доверяют семьи из разных стран.</p>
+      <div class="facts">
+        <div><b data-t="f1b">с 2018</b><span data-t="f1s">преподаю</span></div>
+        <div><b data-t="f3b">3 языка</b><span data-t="f3s">русский, английский, испанский</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec steps" id="start">
+  <div class="wrap">
+    <div><p class="kicker" data-t="st_k">Начало</p><h2 data-t="st_h">С чего начинаем</h2></div>
+    <ol>
+      <li><span>I</span><div><b data-t="s1b">Знакомство</b><p data-t="s1p">Бесплатная встреча на 30 минут. Смотрим, что ученик уже знает и где пробелы.</p></div></li>
+      <li><span>II</span><div><b data-t="s2b">План</b><p data-t="s2p">Составляем план под программу школы и сроки экзаменов.</p></div></li>
+      <li><span>III</span><div><b data-t="s3b">Уроки</b><p data-t="s3p">Занятия один на один, домашние задания и регулярная обратная связь родителям.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec format" id="format">
+  <div class="wrap">
+    <p class="kicker" data-t="fm_k">Формат</p>
+    <h2 data-t="nav3">Как проходят уроки</h2>
+    <dl>
+      <div><dt data-t="d1t">Онлайн</dt><dd data-t="d1d">Один на один, из любой страны и часового пояса.</dd></div>
+      <div><dt data-t="d2t">Длительность</dt><dd data-t="d2d">60 минут</dd></div>
+      <div><dt data-t="d3t">Языки</dt><dd data-t="d3d">Русский, английский или испанский. Термины и задачи на языке школы и экзамена.</dd></div>
+      <div><dt data-t="d4t">Домашние задания</dt><dd data-t="d4d">Небольшие, после каждого урока, по пройденной теме.</dd></div>
+      <div><dt data-t="d5t">Экзамены</dt><dd data-t="d5d">Разбираем задания прошлых лет и критерии оценивания.</dd></div>
+      <div><dt data-t="d6t">Надолго</dt><dd data-t="d6d">Подготовка к экзамену и поддержка на протяжении всей учёбы.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec games" id="games">
+  <div class="wrap">
+    <p class="kicker" data-t="nav6">Игры</p>
+    <h2 data-t="gm_h">Математические игры</h2>
+    <div class="game">
+      <div><h3>Kitty Fraction Bakery</h3><p data-t="gm1p">Дроби и общий знаменатель: помогите котику испечь торты.</p></div>
+      <a href="https://alisawonder.github.io/mathsgames/" data-t="gm_go">Играть</a>
+    </div>
+  </div>
+</section>
+
+<!-- reviews: hidden until real reviews arrive -->
+<section class="sec reviews" id="reviews" hidden>
+  <div class="wrap">
+    <p class="kicker" data-t="rv_k">Отзывы</p>
+    <h2 data-t="rv_h">Что говорят родители и ученики</h2>
+    <div class="quotes">
+      <figure><blockquote><span class="ph" data-t="rv">Текст настоящего отзыва</span></blockquote><figcaption><span class="ph" data-t="rvc">Имя, мама ученика, город</span></figcaption></figure>
+      <figure><blockquote><span class="ph" data-t="rv">Текст настоящего отзыва</span></blockquote><figcaption><span class="ph" data-t="rvc">Имя, мама ученика, город</span></figcaption></figure>
+      <figure><blockquote><span class="ph" data-t="rv">Текст настоящего отзыва</span></blockquote><figcaption><span class="ph" data-t="rvc">Имя, мама ученика, город</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec prices" id="prices">
+  <div class="wrap">
+    <p class="kicker" data-t="nav4">Цены</p>
+    <h2 data-t="pr_h">Стоимость занятий</h2>
+    <div class="plans">
+      <div class="plan"><h3 data-t="s1b">Знакомство</h3><div class="price">0 € <small data-t="p30">/ 30 минут</small></div><p data-t="p1p">Проверка уровня и план занятий.</p></div>
+      <div class="plan"><h3 data-t="p2h">Урок</h3><div class="price"><span data-t="from">от</span> 20 € <small data-t="p60">/ 60 минут</small></div><p data-t="p2p">Индивидуальное занятие. Стоимость зависит от программы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <div><p class="kicker" data-t="nav5">Вопросы</p><h2 data-t="fq_h">Частые вопросы</h2></div>
+    <div>
+      <details><summary data-t="q1">Как проходит первая встреча?</summary><p data-t="a1x">Это 30 минут. Знакомимся, ученик решает несколько задач его уровня, а вы получаете рекомендации и план. Это бесплатно и ни к чему не обязывает.</p></details>
+      <details><summary data-t="q2">Мой ребёнок плохо говорит по-английски. Это проблема?</summary><p data-t="a2x">Нет. Объясняем по-русски и постепенно вводим английские термины, чтобы ученик уверенно чувствовал себя на уроках в школе.</p></details>
+      <details><summary data-t="q3">Готовите ли вы к экзаменам IGCSE, A-Level и IB?</summary><p data-t="a3x">Да. Разбираем экзаменационные задания прошлых лет и учимся писать решения так, как ждут проверяющие.</p></details>    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="intro">
+      <p class="kicker" data-t="ct_k">Заявка</p>
+      <h2 data-t="ct_h">Запишитесь на бесплатное знакомство</h2>
+      <p data-t="ct_p">Напишите в WhatsApp: класс ученика и программу школы. Ответим в течение дня и подберём удобное время.</p>
+    </div>
+    <div class="go">
+      <a class="btn" href="https://wa.me/34644586609"><span data-t="wa">Написать в WhatsApp</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <small data-t="note">30 минут, бесплатно</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Wonderiq · International Education</span>
+    <span><a href="https://wa.me/34644586609">WhatsApp</a> · <a href="https://t.me/wonderiq_academy">Telegram</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg", g=document.getElementById("g");
+  const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);g.appendChild(e);return e};
+  // y = ||x| − 1| on [−2, 2] draws the Wonderiq "W"
+  const X0=-2.4,X1=2.4,Y0=-.45,Y1=1.6,L=10,R=470,T=10,B=370;
+  const sx=x=>L+(x-X0)/(X1-X0)*(R-L), sy=y=>B-(y-Y0)/(Y1-Y0)*(B-T);
+  for(let x=-2;x<=2;x+=.5)if(x)el("line",{x1:sx(x),y1:T,x2:sx(x),y2:B,class:"gl"});
+  for(let y=-.5;y<=1.5;y+=.5)if(y)el("line",{x1:L,y1:sy(y),x2:R,y2:sy(y),class:"gl"});
+  el("line",{x1:L,y1:sy(0),x2:R,y2:sy(0),class:"ax"});
+  el("line",{x1:sx(0),y1:B,x2:sx(0),y2:T,class:"ax"});
+  el("text",{x:R-4,y:sy(0)+26,"text-anchor":"end",class:"axl"}).textContent="x";
+  el("text",{x:sx(0)+10,y:T+18,class:"axl"}).textContent="y";
+  [-2,-1,1,2].forEach(v=>el("text",{x:sx(v),y:sy(0)+26,"text-anchor":"middle",class:"axl"}).textContent=v<0?"−"+(-v):v);
+
+  const d="M"+[-2,-1,0,1,2].map(x=>sx(x).toFixed(1)+","+sy(Math.abs(Math.abs(x)-1)).toFixed(1)).join(" L");
+  const path=el("path",{d,class:"curve"});
+  const marks=[[-2,1,0],[-1,0,.25],[0,1,.5],[1,0,.75],[2,1,1]].map(([x,y,f])=>[f,el("circle",{cx:sx(x),cy:sy(y),r:5,class:"pt"})]);
+
+  const len=path.getTotalLength(), dot=el("circle",{r:7,class:"dot"});
+  const draw=f=>{path.style.strokeDasharray=len;path.style.strokeDashoffset=len*(1-f);const p=path.getPointAtLength(f*len);dot.setAttribute("cx",p.x);dot.setAttribute("cy",p.y);marks.forEach(([s,c])=>c.classList.toggle("on",f>=s-.001))};
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){draw(1);return}
+  draw(0);let t0=null;
+  const ease=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+  const run=ts=>{t0??=ts;const k=Math.min((ts-t0)/2400,1);draw(ease(k));if(k<1)requestAnimationFrame(run)};
+  setTimeout(()=>requestAnimationFrame(run),300);
+})();
+
+// translations: Russian lives in the HTML, [en, es] here
+const T={
+  nav1:["Programmes","Programas"],nav2:["About","Sobre mí"],nav3:["How lessons work","Cómo son las clases"],nav4:["Prices","Precios"],nav5:["FAQ","Preguntas"],nav6:["Games","Juegos"],
+  gm_h:["Maths games","Juegos de matemáticas"],gm1p:["Fractions and common denominators: help the kitty bake cakes.","Fracciones y denominador común: ayuda al gatito a hornear pasteles."],gm_go:["Play","Jugar"],
+  from:["from","desde"],wa:["Message on WhatsApp","Escribir por WhatsApp"],
+  h1:["Maths and computer science for students at <em>international schools</em>","Matemáticas e informática para alumnos de <em>colegios internacionales</em>"],
+  lead:["<strong>We help students learn with confidence in British, IB, American and Spanish curricula.</strong> Lessons in English, Russian or Spanish.","<strong>Ayudamos a los alumnos a estudiar con confianza en los programas británico, IB, americano y español.</strong> Clases en español, inglés o ruso."],
+  cta:["Book a free intro session","Reserva una sesión de presentación"],note:["30 minutes, free","30 minutos, gratis"],
+  fig:["Fig. 1.","Fig. 1."],unis:["Our students went on to","Nuestros alumnos estudian en"],
+  prog_h:["From Grade 5 to university","Desde 5.º de Primaria hasta la universidad"],
+  a1:["Ages 10–14","10–14 años"],a2:["Ages 14–16","14–16 años"],a3:["Ages 16–18","16–18 años"],a4:["Ages 10–18","10–18 años"],a6:["Ages 10+","Desde 10 años"],
+  c1p:["Maths from Grade 5 in any system. MYP, Key Stage 3, IGCSE preparation.","Matemáticas desde 5.º en cualquier sistema. MYP, Key Stage 3, preparación para IGCSE."],
+  c3p:["A-Level Maths, Further Maths, Computer Science. IB Maths SL and HL.","A-Level Maths, Further Maths, Computer Science. IB Maths SL y HL."],
+  c4h:["USA","EE. UU."],c4p:["Maths from Grade 5 through college admission.","Matemáticas desde Grade 5 hasta el acceso a la universidad."],
+  c5h:["Spain","España"],c5p:["Matemáticas: Primaria, ESO, Bachillerato and PAU preparation.","Matemáticas: Primaria, ESO, Bachillerato y preparación para la PAU."],
+  c6h:["For children","Para niños"],c6p:["Computer literacy and first steps in programming.","Informática básica y primeros pasos en programación."],
+  photo:["Alisa, Wonderiq tutor","Alisa, profesora de Wonderiq"],
+  about_h:["Alisa, founder of Wonderiq","Alisa, fundadora de Wonderiq"],
+  quote:["What matters is that students understand the material, believe in themselves and stop being afraid of hard problems.","Lo importante es que el alumno entienda la materia, confíe en sí mismo y deje de tener miedo a los problemas difíciles."],
+  ab1:["A few years ago I moved to a new country myself. I now live in Spain, and I know first-hand what families abroad face: a new school, a new education system, a new language.","Hace unos años yo misma me mudé a otro país. Ahora vivo en España y sé bien a qué se enfrentan las familias en el extranjero: un colegio nuevo, un sistema educativo nuevo, un idioma nuevo."],
+  ab2:["I hold a BSc in Computer Science and am now studying for a Master of Education. Wonderiq starts with my lessons; the goal is an international school trusted by families in many countries.","Soy graduada en Computer Science (BSc) y ahora curso un Master of Education. Wonderiq empieza con mis clases; el objetivo es una escuela internacional en la que confíen familias de muchos países."],
+  f1b:["since 2018","desde 2018"],f1s:["teaching","enseñando"],f3b:["3 languages","3 idiomas"],f3s:["Russian, English, Spanish","ruso, inglés, español"],
+  st_k:["Getting started","Primeros pasos"],st_h:["How we begin","Cómo empezamos"],
+  s1b:["Intro session","Presentación"],s1p:["A free 30-minute session. We see what the student already knows and where the gaps are.","Una sesión gratuita de 30 minutos. Vemos qué sabe ya el alumno y dónde tiene lagunas."],
+  s2b:["Plan","Plan"],s2p:["A plan built around the school curriculum and exam dates.","Un plan según el programa del colegio y las fechas de los exámenes."],
+  s3b:["Lessons","Clases"],s3p:["One-to-one lessons, homework and regular feedback for parents.","Clases individuales, deberes y seguimiento regular para los padres."],
+  fm_k:["Format","Formato"],
+  d1t:["Online","Online"],d1d:["One-to-one, from any country and time zone.","Individuales, desde cualquier país y zona horaria."],
+  d2t:["Length","Duración"],d2d:["60 minutes","60 minutos"],
+  d3t:["Languages","Idiomas"],d3d:["Russian, English or Spanish. Terms and problems in the language of the school and the exam.","Ruso, inglés o español. Términos y problemas en el idioma del colegio y del examen."],
+  d4t:["Homework","Deberes"],d4d:["Short, after every lesson, on the topic covered.","Breves, después de cada clase, sobre el tema visto."],
+  d5t:["Exams","Exámenes"],d5d:["We work through past papers and mark schemes.","Trabajamos con exámenes de años anteriores y criterios de corrección."],
+  d6t:["Long-term","A largo plazo"],d6d:["Exam preparation and support throughout school.","Preparación de exámenes y apoyo durante todos los estudios."],
+  rv_k:["Reviews","Opiniones"],rv_h:["What parents and students say","Qué dicen padres y alumnos"],
+  rv:["Text of a real review","Texto de una opinión real"],rvc:["Name, parent, city","Nombre, madre o padre, ciudad"],
+  pr_h:["Lesson prices","Precios de las clases"],p30:["/ 30 minutes","/ 30 minutos"],p60:["/ 60 minutes","/ 60 minutos"],
+  p1p:["Level check and a study plan.","Prueba de nivel y plan de estudio."],p2h:["Lesson","Clase"],p2p:["One-to-one lesson. The price depends on the programme.","Clase individual. El precio depende del programa."],
+  fq_h:["Frequently asked questions","Preguntas frecuentes"],
+  q1:["How does the first session work?","¿Cómo es la primera sesión?"],
+  a1x:["It takes 30 minutes. We get to know each other, the student solves a few problems at their level, and you get recommendations and a plan. It is free, with no obligation.","Dura 30 minutos. Nos conocemos, el alumno resuelve algunos problemas de su nivel y usted recibe recomendaciones y un plan. Es gratis y sin compromiso."],
+  q2:["My child is still learning English. Is that a problem?","Mi hijo todavía está aprendiendo inglés. ¿Es un problema?"],
+  a2x:["No. We can explain in Russian or Spanish and bring in English terms step by step, so the student feels confident in class.","No. Podemos explicar en español o en ruso e introducir poco a poco los términos en inglés, para que el alumno se sienta seguro en clase."],
+  q3:["Do you prepare students for IGCSE, A-Level and IB exams?","¿Preparáis para los exámenes IGCSE, A-Level e IB?"],
+  a3x:["Yes. We work through past papers and learn to write solutions the way examiners expect.","Sí. Trabajamos con exámenes de años anteriores y aprendemos a redactar las soluciones como esperan los examinadores."],
+  ct_k:["Sign up","Inscripción"],ct_h:["Book a free intro session","Reserve una sesión de presentación gratuita"],
+  ct_p:["Message us on WhatsApp with the student’s year and school programme. We reply within a day to find a convenient time.","Escríbanos por WhatsApp con el curso del alumno y el programa del colegio. Respondemos en un día para elegir un horario."]
+};
+const texts=[...document.querySelectorAll("[data-t]")], alts=[...document.querySelectorAll("[data-ta]")];
+texts.forEach(n=>n.dataset.ru=n.innerHTML);
+alts.forEach(n=>n.dataset.ru=n.alt);
+let lang="ru";
+function setLang(l){
+  lang=l;document.documentElement.lang=l;
+  const i=l==="en"?0:1;
+  texts.forEach(n=>{const v=T[n.dataset.t];n.innerHTML=l==="ru"||!v?n.dataset.ru:v[i]});
+  alts.forEach(n=>{const v=T[n.dataset.ta];n.alt=l==="ru"||!v?n.dataset.ru:v[i]});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+  try{localStorage.setItem("lang",l)}catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.l)));
+let start=location.hash.slice(1);
+if(!["ru","en","es"].includes(start)){try{start=localStorage.getItem("lang")}catch(e){start=null}}
+if(start&&start!=="ru"&&["en","es"].includes(start))setLang(start);
+</script>
+</body>
+</html>
